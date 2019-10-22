@@ -13,3 +13,15 @@ bin/
 .project
 .classpath
 .settings/
+
+/.gradle/
+build/
+out/
+bin/
+.project
+.classpath
+.settings/
+gradle.properties
+.gradle/
+.gitignore
+
