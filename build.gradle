@@ -16,7 +16,7 @@ esdk {
 		shared = false
 		infosystems = []
 		tables = ["ErsatzteileApp", "Teil"]
-		screens = [:]
+		screens = ["ErsatzteileApp:Konfiguration":["A"]]
 		data = []
 		enums = ["UsageReason"]
 		workdirs = ["owsp"]
