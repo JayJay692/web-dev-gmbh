@@ -15,7 +15,7 @@ esdk {
 		appId = "spart"
 		shared = false
 		infosystems = []
-		tables = ["ErsatzteileApp"]
+		tables = ["ErsatzteileApp", "Teil"]
 		screens = ["ErsatzteileApp:Konfiguration":["A"]]
 		data = []
 		enums = ["UsageReason"]
