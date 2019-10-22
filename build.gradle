@@ -19,9 +19,9 @@ esdk {
 		screens = [:]
 		data = []
 		enums = []
+		workdirs = ["owsp"]
 		namedTypes = []
 		languages = "D"
-		essentialsVersions = []
 	}
 
 	abas {
