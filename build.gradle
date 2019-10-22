@@ -15,7 +15,7 @@ esdk {
 		appId = "spart"
 		shared = false
 		infosystems = []
-		tables = []
+		tables = ["ErsatzteileApp"]
 		screens = [:]
 		data = []
 		enums = ["UsageReason"]
@@ -38,9 +38,7 @@ esdk {
 		nexusHost = NEXUS_HOST
 		nexusPort = NEXUS_PORT.toInteger()
 		nexusRepoName = NEXUS_NAME
-		nexusUserName = NEXUS_USER_NAME
 		nexusPassword = NEXUS_PASSWORD
-		nexusVersion = NEXUS_VERSION
 	}
 
 	ssh {
@@ -49,6 +47,7 @@ esdk {
 		user = SSH_USER
 		password = SSH_PASSWORD
 		key = SSH_KEY
+		timeout = 25000
 	}
 	installType = "SSH"
 }

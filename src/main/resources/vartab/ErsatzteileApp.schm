@@ -1,0 +1,81 @@
+database master ErsatzteileApp {
+	number 15
+	classname ErsatzteileApp
+	structure Konfiguration {
+		head {
+			field GL40 skip dbcomname {
+				label ""
+				heading ""
+				description "Datenbankname für Kommandos"
+				screen EDITABLE
+				showPriority A
+				changePriority A
+			}
+			field GL3 dbno {
+				label ""
+				heading ""
+				description Datenbanknummer
+				screen EDITABLE
+				showPriority A
+				changePriority A
+			}
+			field A177 dbname {
+				label ""
+				heading ""
+				description Datenbankname
+				screen EDITABLE
+				showPriority A
+				changePriority A
+			}
+		}
+		table {
+		}
+	}
+	structure Ersatzteile {
+		groupNumber 1
+		head {
+			field "P2:1" part {
+				label ""
+				heading ""
+				description Artikel
+				screen EDITABLE
+				showPriority A
+				changePriority A
+			}
+			field "P1:1" vendor {
+				label ""
+				heading ""
+				description Lieferant
+				screen EDITABLE
+				showPriority A
+				changePriority A
+			}
+			field GL14 vendorordern {
+				label ""
+				heading ""
+				description Lieferantenartikelnummer
+				screen EDITABLE
+				showPriority A
+				changePriority A
+			}
+		}
+		table {
+			field GD2 usagedate {
+				label ""
+				heading ""
+				description Verwendungsdatum
+				screen EDITABLE
+				showPriority A
+				changePriority A
+			}
+			field AZL1000007 usagereason {
+				label ""
+				heading ""
+				description Verwendungsgrund
+				screen EDITABLE
+				showPriority A
+				changePriority A
+			}
+		}
+	}
+}
