@@ -41,8 +41,8 @@
             <cells column="2" row="3" alignmentY="center"/>
             <cells column="3" row="3" alignmentY="center"/>
           </elements>
-          <label viewLanguage="de" key="a24486bb-bd6e-40e2-a059-ff803d160433">
-            <value key="de" value="spart"/>
+          <label viewLanguage="de" key="product$spart_0">
+            <value key="de" value="Ersatzteil"/>
           </label>
         </notebookPanes>
       </elements>
