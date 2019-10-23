@@ -5,14 +5,15 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class EsdkPropertiesReader {
+public enum EsdkPropertiesReader {
+	INSTANCE;
 
 	private final Properties properties;
 
 	EsdkPropertiesReader() {
 		properties = new Properties();
 		try {
-			properties.load(getClass().getClassLoader().getResourceAsStream("application.properties"));
+			properties.load(getClass().getClassLoader().getResourceAsStream("esdk.project.properties"));
 		} catch (IOException e) {
 			Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage(), e);
 		}

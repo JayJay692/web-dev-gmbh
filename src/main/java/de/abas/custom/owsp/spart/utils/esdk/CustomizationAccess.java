@@ -9,18 +9,20 @@ public class CustomizationAccess {
 	// eventType= SE,FX, SV, BA ,BB... inputPlace = BEFORE oder AFTER
 	String eventType, infosystemSearchWord, eventField, inputPlace;
 	boolean showFopName;
-
-	public CustomizationAccess(String eventType, String infosystemSearchWord, String eventField, String inputPlace,
-			DbContext ctx, boolean showFopName) {
+	private DbContext ctx;
+	
+	public CustomizationAccess(String infosystemSearchWord, boolean showFopName, DbContext ctx) {
 		super();
-		this.eventType = eventType;
 		this.infosystemSearchWord = infosystemSearchWord;
-		this.eventField = eventField;
-		this.inputPlace = inputPlace;
 		this.showFopName = showFopName;
+		this.ctx = ctx;
 	}
 
-	public void handleCustomFops(DbContext ctx) {
+	public void handleCustomFops( String eventType, String eventField, String inputPlace) {
+		this.eventType = eventType;
+		this.eventField = eventField;
+		this.inputPlace = inputPlace;
+		
 		String fopName = createFopName();
 		File fopFile = new File(fopName);
 
@@ -32,17 +34,12 @@ public class CustomizationAccess {
 	}
 
 	private String createFopName() {
-		// TODO add workingDirectory to propertiesFile
-		String workingDirectory = "owsp";
-		String fopName;
-
-		fopName = infosystemSearchWord.toUpperCase() + ".";
-		if (eventField != "") {
+		String fopName = infosystemSearchWord.toUpperCase() + ".";
+		if (!eventField.trim().isEmpty()) {
 			fopName += eventField.toUpperCase() + ".";
 		}
 		fopName += eventType.toUpperCase() + "." + inputPlace.toUpperCase();
-		fopName = workingDirectory + fopName;
-
+		fopName = EsdkPropertiesReader.INSTANCE.getWorkdir() + fopName;
 		return fopName;
 	}
 
