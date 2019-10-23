@@ -115,7 +115,7 @@
                     </elements>
                     <elements xsi:type="core:Column">
                       <elements xsi:type="core:ComboBox">
-                        <variable englishName="yspartusagereason" name="yspartusagereason" type="AZL1000007" guiType="COMBOBOX" description="" tableEntry="true" width="16" screenProtection="änderbar" writeable="true" custom="true" meaning="Verwendungsgrund" changePriority="A" viewPriority="A" primaryName="yspartusagereason"/>
+                        <variable englishName="yspartusagereason" name="yspartusagereason" type="AZL1000007" guiType="COMBOBOX" description="" tableEntry="true" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Verwendungsgrund" changePriority="A" viewPriority="A" primaryName="yspartusagereason"/>
                       </elements>
                       <label viewLanguage="de" key="255f83e2-bb27-48ef-94fa-552d88c6ef37">
                         <value key="de" value="Verwendungsgrund"/>
@@ -247,6 +247,6 @@
     <entries englishName="freeTextTab2" name="tftext2" type="TN" guiType="FREETEXT" description="" tableEntry="true" width="80" screenProtection="änderbar" writeable="true" meaning="Freitext 2" changePriority="A" viewPriority="A" primaryName="tftext2"/>
     <entries englishName="userBarTab1" name="tsres1" type="BU1" description="" tableEntry="true" width="1" screenProtection="zeigen änderbar" writeable="true" meaning="Reserveleiste" changePriority="A" viewPriority="A" primaryName="tsres1"/>
     <entries englishName="yspartusagedate" name="yspartusagedate" type="GD2" guiType="DATE" description="" tableEntry="true" width="8" screenProtection="änderbar" writeable="true" custom="true" meaning="Verwendungsdatum" changePriority="A" viewPriority="A" primaryName="yspartusagedate"/>
-    <entries englishName="yspartusagereason" name="yspartusagereason" type="AZL1000007" guiType="COMBOBOX" description="" tableEntry="true" width="16" screenProtection="änderbar" writeable="true" custom="true" meaning="Verwendungsgrund" changePriority="A" viewPriority="A" primaryName="yspartusagereason"/>
+    <entries englishName="yspartusagereason" name="yspartusagereason" type="AZL1000007" guiType="COMBOBOX" description="" tableEntry="true" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Verwendungsgrund" changePriority="A" viewPriority="A" primaryName="yspartusagereason"/>
   </schema:Variables>
 </xmi:XMI>
