@@ -3,11 +3,35 @@
     "databaseName": "ErsatzteileApp",
     "groupName": "Konfiguration",
     "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "java:de.abas.custom.owspart.spart.configuration.ConfigurationEventHandler@spart"
+  },
+
+  {
+    "databaseName": "ErsatzteileApp",
+    "groupName": "Konfiguration",
+    "editorMode": "*",
     "event": "buttonnach",
     "key": "*",
     "field": "yspartfinishconfig",
     "headOrTable": "K",
     "isContinue": "[C]",
     "handler": "java:de.abas.custom.owspart.spart.configuration.ConfigurationEventHandler@spart"
+  },
+  
+  {
+    "databaseName": "ErsatzteileApp",
+    "groupName": "Ersatzteile",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "java:de.abas.custom.owspart.spart.spareParts.SparePartsEventHandler@spart"
   }
 ]

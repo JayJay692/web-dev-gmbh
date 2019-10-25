@@ -16,10 +16,10 @@ import de.abas.erp.jfop.rt.api.annotation.RunFopWith;
 @RunFopWith(EventHandlerRunner.class)
 
 public class SparePartsEventHandler {
-
+	
 	@ScreenEventHandler(type = ScreenEventType.ENTER)
 	public void screenEnter(ScreenEvent event, ScreenControl screenControl, DbContext ctx, ErsatzteileEditor head) throws EventException {
-		// TODO Auto-generated method stub
+		new ScreenEventsSpareParts(ctx, event).screenEnter();
 	}
 
 }
