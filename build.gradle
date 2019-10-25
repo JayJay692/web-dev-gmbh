@@ -60,19 +60,19 @@ dependencies {
 	provided "de.abas.homedir:abas-jfop-runtime-api:1.0.0"
 	provided "de.abas.homedir:abas-erp-common:1.0.0"
 	provided "de.abas.homedir:abas-enums:1.0.0"
+	provided "de.abas.homedir:abas-jfopapi:1.0.0"
+    provided "de.abas.homedir:abas-jfop-base:1.0.0"
 	
 	licensing "de.abas.esdk:client-api:0.0.3:all"
 
 	implementation "de.abas.homedir:abas-axi2:1.0.0"
 	implementation "de.abas.homedir:abas-axi:1.0.0"
-	implementation "de.abas.homedir:abas-erpapi:1.0.0"
-	implementation "de.abas.homedir:abas-jfopapi:1.0.0"
+	implementation "de.abas.homedir:abas-erpapi:1.0.0"	
 	implementation "de.abas.homedir:abas-db-internal:1.0.0"
 	implementation "de.abas.clientdir:abas-db:1.0.0-SNAPSHOT"
 	implementation "de.abas.clientdir:abas-db-infosys:1.0.0-SNAPSHOT"
 
 	runtime "de.abas.homedir:commons-collections:1.0.0"
-	runtime "de.abas.homedir:abas-jfop-base:1.0.0"
 	runtime "de.abas.homedir:jcl-over-slf4j:1.0.0"
 	runtime "de.abas.homedir:slf4j-api:1.0.0"
 

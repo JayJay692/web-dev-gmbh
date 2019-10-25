@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ABASData>
+    <RecordSet tableNumber="15:0" tableName="ErsatzteileApp:Konfiguration" identifier="guid" standard="false" importOnce="false" importMode="normal">
+        <Record id="(153,15,0)">
+            <Head>
+                <Field name="id" abasType="ID15">(153,15,0)</Field>
+                <Field name="guid" abasType="GLA38">273282ef-90a3-468c-83fe-27b772fa44c2</Field>
+                <Field name="such" abasType="SWK15">KONFIG</Field>
+                <Field name="name" abasType="T34">Konfiguration für ErsatzteileApp</Field>
+            </Head>
+        </Record>
+    </RecordSet>
+</ABASData>
