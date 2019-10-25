@@ -16,7 +16,7 @@ public class DatabaseMetaData {
 
 	private Vartab getVartab(DbContext ctx, String vartabSearchWord) {
 		// TODO: abfangen wenn null
-		List<Vartab> selectVartab = new CodeTemplates().getSelectList(Vartab.class, "such", vartabSearchWord, ctx);
+		List<Vartab> selectVartab = new CodeTemplates().getSelectList(Vartab.class, "swd", vartabSearchWord, ctx);
 		return selectVartab.iterator().next();
 	}
 
