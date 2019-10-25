@@ -15,23 +15,23 @@
         <Record id="(1158,109,0)">
             <Head>
                 <Field name="id" abasType="ID109">(1158,109,0)</Field>
-                <Field name="guid" abasType="GLA38">c5acf215-cc1d-4fd4-880a-7b71e9753c5a</Field>
+                <Field name="guid" abasType="GLA38">268e47a5-e9ae-47f3-8985-05871a8164d8</Field>
                 <Field name="nummer" abasType="NK109">1000858</Field>
-                <Field name="such" abasType="SWK109">SPCALLBACK</Field>
-                <Field name="name" abasType="GL50">Rückruf</Field>
+                <Field name="such" abasType="SWK109">SPREGULAR</Field>
+                <Field name="name" abasType="GL50">regulärer Tausch</Field>
                 <Field name="name14" abasType="GL50"></Field>
-                <Field name="besch" abasType="T65">Rückruf</Field>
+                <Field name="besch" abasType="T65">regulärer Tausch</Field>
             </Head>
         </Record>
         <Record id="(1157,109,0)">
             <Head>
                 <Field name="id" abasType="ID109">(1157,109,0)</Field>
-                <Field name="guid" abasType="GLA38">268e47a5-e9ae-47f3-8985-05871a8164d8</Field>
+                <Field name="guid" abasType="GLA38">c5acf215-cc1d-4fd4-880a-7b71e9753c5a</Field>
                 <Field name="nummer" abasType="NK109">1000857</Field>
-                <Field name="such" abasType="SWK109">SPREGULAR</Field>
-                <Field name="name" abasType="GL50">regulärer Tausch</Field>
+                <Field name="such" abasType="SWK109">SPCALLBACK</Field>
+                <Field name="name" abasType="GL50">Rückruf</Field>
                 <Field name="name14" abasType="GL50"></Field>
-                <Field name="besch" abasType="T65">regulärer Tausch</Field>
+                <Field name="besch" abasType="T65">Rückruf</Field>
             </Head>
         </Record>
         <Record id="(1155,109,0)">
@@ -75,7 +75,7 @@
             </Row>
             <Row number="3">
                 <Field name="zid" abasType="IDZ107:1">(267,107,0,3)</Field>
-                <Field name="vaufzelem" abasType="VID88">(1157,109,0)</Field>
+                <Field name="vaufzelem" abasType="VID88">(1158,109,0)</Field>
                 <Field name="aefix" abasType="B1">0</Field>
                 <Field name="aekfix" abasType="B1">0</Field>
                 <Field name="aebezfix" abasType="B1">1</Field>
@@ -95,7 +95,7 @@
             </Row>
             <Row number="1">
                 <Field name="zid" abasType="IDZ107:1">(267,107,0,1)</Field>
-                <Field name="vaufzelem" abasType="VID88">(1158,109,0)</Field>
+                <Field name="vaufzelem" abasType="VID88">(1157,109,0)</Field>
                 <Field name="aefix" abasType="B1">0</Field>
                 <Field name="aekfix" abasType="B1">0</Field>
                 <Field name="aebezfix" abasType="B1">1</Field>
