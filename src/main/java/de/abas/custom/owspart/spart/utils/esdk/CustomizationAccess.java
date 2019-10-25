@@ -39,7 +39,7 @@ public class CustomizationAccess {
 			fopName += eventField.toUpperCase() + ".";
 		}
 		fopName += eventType.toUpperCase() + "." + inputPlace.toUpperCase();
-		fopName = EsdkPropertiesReader.INSTANCE.getWorkdir() + fopName;
+		fopName = EsdkProperties.getWorkdir() + fopName;
 		return fopName;
 	}
 

@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import de.abas.erp.api.gui.TextBox;
 import de.abas.erp.axi.event.EventException;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.EditorObject;
@@ -14,11 +15,19 @@ import de.abas.erp.db.selection.Conditions;
 import de.abas.erp.db.selection.SelectionBuilder;
 
 public class CodeTemplates {
+	
+	private static final int EXIT_ERROR_CODE = 1;
 	SystemInformation systemInformation = new SystemInformation();
 	
 	public static void abortEditors(EditorObject editor) {
 		if (editor != null && editor.active()) {
 			editor.abort();
+		}
+	}
+	
+	public void displayNewTextBox(String boxMessage, DbContext ctx) {
+		if (!systemInformation.getEdpMode()) {
+			new TextBox(ctx, "Hinweis", boxMessage).show();			
 		}
 	}
 	
@@ -28,9 +37,9 @@ public class CodeTemplates {
 		}
 	}
 	
-	public void throwException(String errorText) throws EventException {
+	public void throwEventException(String errorText) throws EventException {
 		if (errorText != "") {
-			throw new EventException(errorText,1);
+			throw new EventException(errorText,EXIT_ERROR_CODE);
 		}
 	}
 	

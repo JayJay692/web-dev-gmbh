@@ -1,4 +1,4 @@
-package de.abas.custom.owspart.spart.event;
+package de.abas.custom.owspart.spart.infosystems;
 
 import de.abas.erp.axi.screen.ScreenControl;
 import de.abas.erp.axi2.event.ScreenEvent;
