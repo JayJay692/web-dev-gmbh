@@ -1,0 +1,6 @@
+main=screen_OWSPART.SPUREASON_M.xml
+table=screen_OWSPART.SPUREASON_T.xml
+lay=
+frame.screenId=
+frame.prio=
+frame.name=SPUREASON

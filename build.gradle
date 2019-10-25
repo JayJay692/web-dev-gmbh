@@ -14,7 +14,7 @@ esdk {
 		vendorId = "es"
 		appId = "spart"
 		shared = false
-		infosystems = []
+		infosystems = ["IS.OWSPART.SPUREASON"]
 		tables = ["ErsatzteileApp", "Teil"]
 		screens = ["ErsatzteileApp:Konfiguration":["A"], "ErsatzteileApp:Ersatzteile":["A"], "2":["A","D"]]
 		data = []
