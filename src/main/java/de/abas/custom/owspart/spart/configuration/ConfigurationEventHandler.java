@@ -29,7 +29,7 @@ public class ConfigurationEventHandler {
 	@ScreenEventHandler(type = ScreenEventType.ENTER)
 	public void screenEnter(ScreenEvent event, ScreenControl screenControl, DbContext ctx, KonfigurationEditor head)
 			throws EventException {
-
+		new ScreenEventsConfiguration(ctx, event).screenEnter();
 	}
 
 }
