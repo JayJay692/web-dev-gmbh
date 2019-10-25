@@ -1,4 +1,4 @@
-package de.abas.custom.owsp.spart.utils.esdk;
+package de.abas.custom.owspart.spart.utils.esdk;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

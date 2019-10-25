@@ -1,4 +1,4 @@
-package de.abas.custom.owsp.spart.utils.esdk;
+package de.abas.custom.owspart.spart.utils.esdk;
 
 import de.abas.eks.jfop.FOPException;
 import de.abas.erp.axi.event.EventException;

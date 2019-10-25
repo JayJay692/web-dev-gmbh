@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE frame SYSTEM "urn:x-abas.de:abasscreens-1.00.dtd">
+
+<frame frameType="M" msgId="spureason_owspart$0" stdHelp="25B.1" customHelp="">
+ <layout.grid>
+  <metainfo axis="row" grid="0" stretch="zoom" />
+  <metainfo axis="column" grid="0" stretch="zoom" />
+  <cell alignX="fill" alignY="fill" gridX="0" gridY="0">
+   <layout.split axis="row">
+    <pane.split>
+     <layout.notebook>
+      <pane.notebook msgId="spureason_owspart$1">
+       <layout.grid>
+        <metainfo axis="column" grid="2" indent="large" />
+        <cell alignY="beginning" gridX="0" gridY="0">
+         <label msgId="spureason_owspart_fhead_yspartsparepart" />
+        </cell>
+        <cell alignY="beginning" gridX="1" gridY="0">
+         <erpfield s3Name="0:yspartsparepart" />
+        </cell>
+        <cell alignY="beginning" gridX="2" gridY="0">
+         <label msgId="spureason_owspart_fhead_yspartproduct" />
+        </cell>
+        <cell alignY="beginning" gridX="3" gridY="0">
+         <erpfield s3Name="0:yspartproduct" />
+        </cell>
+        <cell alignY="beginning" gridX="0" gridY="1">
+         <label msgId="spureason_owspart_fhead_yspartdatefrom" />
+        </cell>
+        <cell alignY="beginning" gridX="1" gridY="1">
+         <erpfield s3Name="0:yspartdatefrom" />
+        </cell>
+        <cell alignY="beginning" gridX="2" gridY="1">
+         <label msgId="spureason_owspart_fhead_yspartdateto" />
+        </cell>
+        <cell alignY="beginning" gridX="3" gridY="1">
+         <erpfield s3Name="0:yspartdateto" />
+        </cell>
+        <cell alignY="beginning" gridX="0" gridY="2">
+         <label msgId="spureason_owspart_fhead_yspartusagereason" />
+        </cell>
+        <cell alignY="beginning" gridX="1" gridY="2">
+         <erpfield s3Name="0:yspartusagereason" />
+        </cell>
+        <cell alignY="beginning" gridX="2" gridY="2" />
+        <cell alignY="beginning" gridX="3" gridY="2" />
+        <cell alignY="beginning" gridX="0" gridY="3" />
+        <cell alignY="beginning" gridX="1" gridY="3" />
+        <cell alignY="beginning" gridX="2" gridY="3" />
+        <cell alignY="beginning" gridX="3" gridY="3" />
+        <cell alignY="beginning" gridX="0" gridY="4" />
+        <cell alignY="beginning" gridX="1" gridY="4" />
+        <cell alignY="beginning" gridX="2" gridY="4" />
+        <cell alignY="beginning" gridX="3" gridY="4" />
+        <cell alignY="beginning" gridX="0" gridY="5" />
+        <cell alignY="beginning" gridX="1" gridY="5" />
+        <cell alignY="beginning" gridX="2" gridY="5" />
+        <cell alignY="beginning" gridX="3" gridY="5" />
+        <cell alignY="beginning" gridX="0" gridY="6" />
+        <cell alignY="beginning" gridX="1" gridY="6" />
+        <cell alignY="beginning" gridX="2" gridY="6" />
+        <cell alignY="beginning" gridX="3" gridY="6" />
+        <cell alignY="beginning" gridX="0" gridY="7" />
+        <cell alignY="beginning" gridX="1" gridY="7" />
+        <cell alignY="beginning" gridX="2" gridY="7" />
+        <cell alignY="beginning" gridX="3" gridY="7" />
+        <cell alignY="beginning" gridX="0" gridY="8" />
+        <cell alignY="beginning" gridX="1" gridY="8" />
+        <cell alignY="beginning" gridX="2" gridY="8" />
+        <cell alignY="beginning" gridX="3" gridY="8" />
+        <cell alignY="beginning" gridX="0" gridY="9" />
+        <cell alignY="beginning" gridX="1" gridY="9" />
+        <cell alignY="beginning" gridX="2" gridY="9" />
+        <cell alignY="beginning" gridX="3" gridY="9" />
+       </layout.grid>
+      </pane.notebook>
+     </layout.notebook>
+    </pane.split>
+    <pane.split>
+     <table>
+      <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttsparepart" s3Name="1:ysparttsparepart" />
+      <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttnamespart" s3Name="1:ysparttnamespart" />
+      <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttproduct" s3Name="1:ysparttproduct" />
+      <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttdatelastuse" s3Name="1:ysparttdatelastuse" />
+      <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttreasonlastu" s3Name="1:ysparttreasonlastu" />
+      <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttnewdateuse" s3Name="1:ysparttnewdateuse" />
+      <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttnewreasonus" s3Name="1:ysparttnewreasonus" />
+      <erpfield dimX="0" msgId="spureason_owspart_ftable_ysparttsetusage" s3Name="1:ysparttsetusage" />
+     </table>
+    </pane.split>
+   </layout.split>
+  </cell>
+ </layout.grid>
+</frame>
+
