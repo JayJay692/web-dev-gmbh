@@ -71,7 +71,7 @@ Z#0#isauswahl##0####(1)######0#0#0#0##0##
 Z#0#isstufe##0####(1)######0#0#0#0##0##
 Z#0#isbstart##0####(0)######0#0#0#0##0##
 Z#0#isstartzeit##0####(0)######0#0#0#0##0##
-Z#1#xxyspartshowfopname#B1#0#Programmnamen fÅr individuelle Fops anzeigen#(65)#(65)#(2)######0#1#0#0##0##
+Z#1#xxyspartshowfopname#B1#0#Programmnamen fÔøΩr individuelle Fops anzeigen#(65)#(65)#(2)######0#1#0#0##0##
 Z#1#xxyspartsparepart#P15:1#0#Ersatzteil#(65)#(65)#(2)######1#1#0#0##0##
 Z#1#xxyspartproduct#P2:1#0#Artikel#(65)#(65)#(2)######1#1#0#0##0##
 Z#1#xxyspartdatefrom#GD2#0#Letzte Verwendung von#(65)#(65)#(2)######1#1#0#0##0##

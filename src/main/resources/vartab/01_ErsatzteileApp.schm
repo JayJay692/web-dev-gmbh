@@ -27,6 +27,14 @@ database master ErsatzteileApp {
 				showPriority A
 				changePriority A
 			}
+			field BU3 skip finishconfig {
+				label ""
+				heading ""
+				description "Konfiguration abschließen"
+				screen VIEW_EDITABLE
+				showPriority A
+				changePriority A
+			}
 		}
 		table {
 		}
