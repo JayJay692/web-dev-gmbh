@@ -7,5 +7,5 @@ import de.abas.erp.db.AbasObject;
 import de.abas.erp.db.DbContext;
 
 public interface EsdkButtonEventLogic<T extends AbasObject> {
-	void execute(T head, ButtonEvent event, ScreenControl screenControl, DbContext ctx) throws Exception;
+	void executeButtonLogic(T head, ButtonEvent event, ScreenControl screenControl, DbContext ctx) throws Exception;
 }
