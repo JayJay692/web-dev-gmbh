@@ -1,4 +1,4 @@
-package de.abas.custom.owsp.spart.event;
+package de.abas.custom.owspart.spart.event;
 
 import de.abas.erp.axi.event.EventException;
 import de.abas.erp.axi.screen.ScreenControl;

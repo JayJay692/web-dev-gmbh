@@ -1,8 +1,8 @@
-package de.abas.custom.owsp.spart.utils.esdk;
+package de.abas.custom.owspart.spart.utils.esdk;
 
 import java.util.List;
 
-import de.abas.custom.owsp.spart.utils.CodeTemplates;
+import de.abas.custom.owspart.spart.utils.CodeTemplates;
 import de.abas.erp.common.type.enums.EnumDatabase;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.schema.company.Vartab;

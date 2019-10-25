@@ -19,7 +19,7 @@ esdk {
 		screens = ["ErsatzteileApp:Konfiguration":["A"], "ErsatzteileApp:Ersatzteile":["A"], "2":["A","D"]]
 		data = []
 		enums = ["UsageReason"]
-		workdirs = ["owsp"]
+		workdirs = ["owspart"]
 		namedTypes = []
 		languages = "D"
 	}

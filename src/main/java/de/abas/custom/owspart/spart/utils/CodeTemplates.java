@@ -1,4 +1,4 @@
-package de.abas.custom.owsp.spart.utils;
+package de.abas.custom.owspart.spart.utils;
 
 import java.util.Calendar;
 import java.util.Date;
