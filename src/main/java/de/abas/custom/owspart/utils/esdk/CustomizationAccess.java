@@ -2,6 +2,7 @@ package de.abas.custom.owspart.utils.esdk;
 
 import java.io.File;
 
+import de.abas.custom.owspart.utils.infosystem.FopEventTypeToken;
 import de.abas.eks.jfop.remote.FOe;
 import de.abas.erp.db.AbasObject;
 import de.abas.erp.db.DbContext;
@@ -10,8 +11,8 @@ public class CustomizationAccess {
 	// eventType= SE,FX, SV, BA ,BB... inputPlace = BEFORE oder AFTER
 	String eventType, infosystemSearchWord, eventField, inputPlace;
 
-	public void handleCustomFops(AbasObject head, DbContext ctx, String eventType, String eventFieldEnglish, String inputPlace) {
-		this.eventType = eventType;
+	public void handleCustomFops(AbasObject head, DbContext ctx, FopEventTypeToken fopEventTypeToken, String eventFieldEnglish, String inputPlace) {
+		this.eventType = fopEventTypeToken.getToken();
 		this.eventField = eventFieldEnglish;
 		this.inputPlace = inputPlace;
 		

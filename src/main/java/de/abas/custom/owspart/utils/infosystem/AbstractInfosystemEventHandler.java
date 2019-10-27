@@ -17,13 +17,13 @@ public abstract class AbstractInfosystemEventHandler<T extends AbasObject> imple
 	}
 
 	@Override
-	public void handleEvent(Event<? extends EventType> event, ScreenControl screenControl, DbContext ctx, T head,
+	public void handleEvent(Event<? extends EventType> event, FopEventTypeToken fopEventTypeToken, ScreenControl screenControl, DbContext ctx, T head,
 			de.abas.erp.db.infosystem.standard.BaseInfosystem.Row<? extends T> currentRow) throws Exception {
 //		deaktiviert wegen nicht lizenziertem Docker
 //		RuntimerLicenseChecker.validateLicense();
-		customizationAccess.handleCustomFops(head, ctx, event.getType().toString(), getFieldName(event), "before");
+		customizationAccess.handleCustomFops(head, ctx, fopEventTypeToken, getFieldName(event), "before");
 		handleEventImpl(event, screenControl, ctx, head, currentRow);
-		customizationAccess.handleCustomFops(head, ctx, event.getType().toString(), getFieldName(event), "after");
+		customizationAccess.handleCustomFops(head, ctx, fopEventTypeToken, getFieldName(event), "after");
 	}
 
 	private String getFieldName(Event<? extends EventType> event) {

@@ -4,6 +4,7 @@ import de.abas.custom.owspart.infosystems.spureason.buttonevents.StartButtonAfte
 import de.abas.custom.owspart.infosystems.spureason.fieldevents.DateFromFieldExit;
 import de.abas.custom.owspart.infosystems.spureason.fieldevents.DateToFieldExit;
 import de.abas.custom.owspart.infosystems.spureason.screenevents.ScreenEnter;
+import de.abas.custom.owspart.utils.infosystem.FopEventTypeToken;
 import de.abas.erp.axi.screen.ScreenControl;
 import de.abas.erp.axi2.EventHandlerRunner;
 import de.abas.erp.axi2.annotation.ButtonEventHandler;
@@ -30,31 +31,31 @@ public class UsageReasonSparePartEventHandler {
 	@ButtonEventHandler(field = "start", type = ButtonEventType.AFTER)
 	public void startAfter(Event<ButtonEventType> event, ScreenControl screenControl, DbContext ctx,
 			UsageReasonSparePart head) throws Exception {
-		new StartButtonAfter().handleEvent(event, screenControl, ctx, head, null);
+		new StartButtonAfter().handleEvent(event, FopEventTypeToken.BUTTON_AFTER, screenControl, ctx, head, null);
 	}
 
 	@FieldEventHandler(field = "yspartdatefrom", type = FieldEventType.EXIT)
 	public void yspartdatefromExit(FieldEvent event, ScreenControl screenControl, DbContext ctx,
 			UsageReasonSparePart head) throws Exception {
-		new DateFromFieldExit().handleEvent(event, screenControl, ctx, head, null);
+		new DateFromFieldExit().handleEvent(event, FopEventTypeToken.FIELD_EXIT, screenControl, ctx, head, null);
 	}
 
 	@FieldEventHandler(field = "yspartdateto", type = FieldEventType.EXIT)
 	public void yspartdatetoExit(FieldEvent event, ScreenControl screenControl, DbContext ctx,
 			UsageReasonSparePart head) throws Exception {
-		new DateToFieldExit().handleEvent(event, screenControl, ctx, head, null);
+		new DateToFieldExit().handleEvent(event, FopEventTypeToken.FIELD_EXIT, screenControl, ctx, head, null);
 	}
 
 	@ButtonEventHandler(field = "ysparttsetusage", type = ButtonEventType.AFTER, table = true)
 	public void ysparttsetusageAfter(ButtonEvent event, ScreenControl screenControl, DbContext ctx,
 			UsageReasonSparePart head, UsageReasonSparePart.Row currentRow) throws Exception {
-		new StartButtonAfter().handleEvent(event, screenControl, ctx, head, currentRow);
+		new StartButtonAfter().handleEvent(event, FopEventTypeToken.BUTTON_AFTER, screenControl, ctx, head, currentRow);
 	}
 
 	@ScreenEventHandler(type = ScreenEventType.ENTER)
 	public void screenEnter(ScreenEvent event, ScreenControl screenControl, DbContext ctx, UsageReasonSparePart head)
 			throws Exception {
-		new ScreenEnter().handleEvent(event, screenControl, ctx, head, null);
+		new ScreenEnter().handleEvent(event, FopEventTypeToken.SCREEN_ENTER, screenControl, ctx, head, null);
 	}
 
 }
