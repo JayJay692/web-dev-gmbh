@@ -1,9 +1,9 @@
-package de.abas.custom.owspart.spart.configuration;
+package de.abas.custom.owspart.configuration;
 
-import de.abas.custom.owspart.spart.utils.CodeTemplates;
-import de.abas.custom.owspart.spart.utils.esdk.AbasFilesFactoryTODO;
-import de.abas.custom.owspart.spart.utils.esdk.DatabaseMetaData;
-import de.abas.custom.owspart.spart.utils.esdk.EsdkProperties;
+import de.abas.custom.owspart.utils.CodeTemplates;
+import de.abas.custom.owspart.utils.esdk.AbasFilesFactoryTODO;
+import de.abas.custom.owspart.utils.esdk.DatabaseMetaData;
+import de.abas.custom.owspart.utils.esdk.EsdkProperties;
 import de.abas.erp.axi.event.EventException;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.schema.custom.ersatzteileapp.KonfigurationEditor;
@@ -27,7 +27,7 @@ public class ButtonEventsConfiguration {
 					databaseCommand, "UTF16");
 			codeTemplates.displayNewTextBox("Konfiguration abgeschlossen", ctx);
 		} catch (RuntimeException e) {
-			codeTemplates.throwEventException(e.getMessage());
+			codeTemplates.createEventException(e.getMessage());
 		}
 	}
 }

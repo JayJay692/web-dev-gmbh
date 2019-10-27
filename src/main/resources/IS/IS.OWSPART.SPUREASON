@@ -2,7 +2,7 @@ V#21
 K#0#SPUREASON#Ersatzteil Verwendung erfassen#(65)#isrein/screen.OWSPART.SPUREASON#25B.1##
 K#(0)#(0)#100000##0#0#UsageReasonSparePart#1
 K#0#(1)#
-K######
+K#java:de.abas.custom.owspart.infosystems.spureason.UsageReasonSparePartEventHandler@spart#####
 K#######
 K#owspart#(15)#15:1#(116)#(98)###0#0#
 K#########
@@ -69,13 +69,13 @@ Z#0#isisref##0####(0)######0#0#0#0##0##
 Z#0#isselect##0####(1)######0#0#0#0##0##
 Z#0#isauswahl##0####(1)######0#0#0#0##0##
 Z#0#isstufe##0####(1)######0#0#0#0##0##
-Z#0#isbstart##0####(0)######0#0#0#0##0##
+Z#0#isbstart##0####(1)##java:de.abas.custom.owspart.infosystems.spureason.UsageReasonSparePartEventHandler@spart####0#0#0#0##0##
 Z#0#isstartzeit##0####(0)######0#0#0#0##0##
 Z#1#xxyspartshowfopname#B1#0#Programmnamen f�r individuelle Fops anzeigen#(65)#(65)#(2)######0#1#0#0##0##
 Z#1#xxyspartsparepart#P15:1#0#Ersatzteil#(65)#(65)#(2)######1#1#0#0##0##
 Z#1#xxyspartproduct#P2:1#0#Artikel#(65)#(65)#(2)######1#1#0#0##0##
-Z#1#xxyspartdatefrom#GD2#0#Letzte Verwendung von#(65)#(65)#(2)######1#1#0#0##0##
-Z#1#xxyspartdateto#GD2#0#Letzte Verwendung bis#(65)#(65)#(2)######1#1#0#0##0##
+Z#1#xxyspartdatefrom#GD2#0#Letzte Verwendung von#(65)#(65)#(2)#####java:de.abas.custom.owspart.infosystems.spureason.UsageReasonSparePartEventHandler@spart#1#1#0#0##0##
+Z#1#xxyspartdateto#GD2#0#Letzte Verwendung bis#(65)#(65)#(2)#####java:de.abas.custom.owspart.infosystems.spureason.UsageReasonSparePartEventHandler@spart#1#1#0#0##0##
 Z#1#xxyspartusagereason#AZL1000007#0#Verwendungsgrund#(65)#(65)#(2)######1#1#0#0##0##
 Z#0#ittabnr##1####(0)######0#0#0#0##0##
 Z#0#itzid##1####(0)######0#0#0#0##0##
@@ -103,4 +103,4 @@ Z#2#xxysparttdatelastuse#GD2#1#letzte Verwendung am#(65)#(65)#(0)######1#1#0#0##
 Z#2#xxysparttreasonlastu#AZL1000007#1#letzter Verwendungsgrund#(65)#(65)#(0)######1#1#0#0##0##
 Z#2#xxysparttnewdateuse#GD2#1#neue Verwendung am#(65)#(65)#(0)######1#1#0#0##0##
 Z#2#xxysparttnewreasonus#AZL1000007#1#Grund der Verwendung#(65)#(65)#(0)######1#1#0#0##0##
-Z#2#xxysparttsetusage#BU4#1#Verwendung erfassen#(65)#(65)#(1)######1#1#0#0##0##
+Z#2#xxysparttsetusage#BU4#1#Verwendung erfassen#(65)#(65)#(1)##java:de.abas.custom.owspart.infosystems.spureason.UsageReasonSparePartEventHandler@spart####1#1#0#0##0##

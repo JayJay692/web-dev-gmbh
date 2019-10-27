@@ -1,4 +1,4 @@
-package de.abas.custom.owspart.spart.utils;
+package de.abas.custom.owspart.utils;
 
 import de.abas.erp.common.type.AbasDate;
 import de.abas.erp.db.DbContext;
