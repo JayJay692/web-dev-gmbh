@@ -63,6 +63,16 @@
                     <variable englishName="yspartdbname" name="yspartdbname" type="A177" guiType="COMBOBOX" description="" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Datenbankname" changePriority="A" viewPriority="A" primaryName="yspartdbname"/>
                   </elements>
                 </cells>
+                <cells row="4" alignmentY="center">
+                  <elements xsi:type="core:Button">
+                    <variable englishName="yspartfinishconfig" name="yspartfinishconfig" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Konfiguration abschließen" changePriority="A" viewPriority="A" primaryName="yspartfinishconfig"/>
+                    <label viewLanguage="de" key="583d3870-5b4e-4f35-b6fd-fcea10029f1b">
+                      <value key="de" value="Konfiguration abschließen"/>
+                    </label>
+                  </elements>
+                </cells>
+                <cells column="1" row="4" alignmentY="center"/>
+                <cells column="2" row="4" alignmentY="center"/>
                 <metaInfo insets="large" location="1"/>
                 <metaInfo insets="large" location="2"/>
               </elements>

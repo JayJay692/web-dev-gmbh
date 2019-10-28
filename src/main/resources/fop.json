@@ -8,7 +8,7 @@
     "field": "",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "java:de.abas.custom.owspart.spart.configuration.ConfigurationEventHandler@spart"
+    "handler": "java:de.abas.custom.owspart.configuration.ConfigurationEventHandler@spart"
   },
 
   {
@@ -20,7 +20,7 @@
     "field": "yspartfinishconfig",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "java:de.abas.custom.owspart.spart.configuration.ConfigurationEventHandler@spart"
+    "handler": "java:de.abas.custom.owspart.configuration.ConfigurationEventHandler@spart"
   },
   
   {
@@ -32,6 +32,17 @@
     "field": "",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "java:de.abas.custom.owspart.spart.spareParts.SparePartsEventHandler@spart"
+    "handler": "java:de.abas.custom.owspart.spareParts.SparePartsEventHandler@spart"
+  },
+  
+    {
+    "screenNumber": "2",
+    "editorMode": "*",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "yspartcreatespart",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "java:de.abas.custom.owspart.product.ProductEventHandler@spart"
   }
 ]

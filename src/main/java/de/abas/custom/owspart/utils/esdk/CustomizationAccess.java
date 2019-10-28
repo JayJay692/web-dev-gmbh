@@ -1,31 +1,24 @@
-package de.abas.custom.owspart.spart.utils.esdk;
+package de.abas.custom.owspart.utils.esdk;
 
 import java.io.File;
 
 import de.abas.eks.jfop.remote.FOe;
+import de.abas.erp.db.AbasObject;
 import de.abas.erp.db.DbContext;
 
 public class CustomizationAccess {
 	// eventType= SE,FX, SV, BA ,BB... inputPlace = BEFORE oder AFTER
 	String eventType, infosystemSearchWord, eventField, inputPlace;
-	boolean showFopName;
-	private DbContext ctx;
-	
-	public CustomizationAccess(String infosystemSearchWord, boolean showFopName, DbContext ctx) {
-		super();
-		this.infosystemSearchWord = infosystemSearchWord;
-		this.showFopName = showFopName;
-		this.ctx = ctx;
-	}
 
-	public void handleCustomFops( String eventType, String eventField, String inputPlace) {
+	public void handleCustomFops(AbasObject head, DbContext ctx, String eventType, String eventFieldEnglish, String inputPlace) {
 		this.eventType = eventType;
-		this.eventField = eventField;
+		this.eventField = eventFieldEnglish;
 		this.inputPlace = inputPlace;
 		
-		String fopName = createFopName();
+		String fopName = createFopName(head);
 		File fopFile = new File(fopName);
 
+		boolean showFopName = head.getBoolean("y" + EsdkProperties.getAppId()+"showfopname");
 		if (showFopName) {
 			ctx.out().println(fopName);
 		}
@@ -33,13 +26,13 @@ public class CustomizationAccess {
 		callIndividualFopWhenItExist(fopName, fopFile);
 	}
 
-	private String createFopName() {
-		String fopName = infosystemSearchWord.toUpperCase() + ".";
+	private String createFopName(AbasObject head) {
+		String fopName = head.getString("swd").toUpperCase() + ".";
 		if (!eventField.trim().isEmpty()) {
 			fopName += eventField.toUpperCase() + ".";
 		}
 		fopName += eventType.toUpperCase() + "." + inputPlace.toUpperCase();
-		fopName = EsdkProperties.getWorkdir() + fopName;
+		fopName = EsdkProperties.getWorkdir() + "/" + fopName;
 		return fopName;
 	}
 

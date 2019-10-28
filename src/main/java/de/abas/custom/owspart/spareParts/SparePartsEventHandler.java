@@ -1,4 +1,4 @@
-package de.abas.custom.owspart.spart.spareParts;
+package de.abas.custom.owspart.spareParts;
 
 import de.abas.erp.axi.event.EventException;
 import de.abas.erp.axi.screen.ScreenControl;
