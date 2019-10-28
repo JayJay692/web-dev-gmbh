@@ -1,5 +1,6 @@
 package de.abas.custom.owspart.infosystems.spureason;
 
+import de.abas.custom.owspart.infosystems.spureason.buttonevents.SetUsageButtonAfter;
 import de.abas.custom.owspart.infosystems.spureason.buttonevents.StartButtonAfter;
 import de.abas.custom.owspart.infosystems.spureason.fieldevents.DateFromFieldExit;
 import de.abas.custom.owspart.infosystems.spureason.fieldevents.DateToFieldExit;
@@ -49,7 +50,7 @@ public class UsageReasonSparePartEventHandler {
 	@ButtonEventHandler(field = "ysparttsetusage", type = ButtonEventType.AFTER, table = true)
 	public void ysparttsetusageAfter(ButtonEvent event, ScreenControl screenControl, DbContext ctx,
 			UsageReasonSparePart head, UsageReasonSparePart.Row currentRow) throws Exception {
-		new StartButtonAfter().handleEvent(event, FopEventTypeToken.BUTTON_AFTER, screenControl, ctx, head, currentRow);
+		new SetUsageButtonAfter().handleEvent(event, FopEventTypeToken.BUTTON_AFTER, screenControl, ctx, head, currentRow);
 	}
 
 	@ScreenEventHandler(type = ScreenEventType.ENTER)
