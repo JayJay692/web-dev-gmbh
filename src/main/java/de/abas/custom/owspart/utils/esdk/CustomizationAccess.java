@@ -22,11 +22,19 @@ public class CustomizationAccess {
 		String fopName = createFopName(head, inputPlace);
 		File fopFile = new File(fopName);
 
-		if (head.getBoolean(String.format("y%sshowfopname", EsdkProperties.getAppId()))) {
-			databaseContext.out().println(fopName);
+		if (isShowFopName(head)) {
+			displayFopName(databaseContext, fopName);
 		}
 
 		callIndividualFopWhenItExist(fopName, fopFile);
+	}
+
+	private void displayFopName(DbContext databaseContext, String fopName) {
+		databaseContext.out().println(fopName);
+	}
+
+	private boolean isShowFopName(AbasObject head) {
+		return head.getBoolean(String.format("y%sshowfopname", EsdkProperties.getAppId()));
 	}
 
 	private String createFopName(AbasObject head, String inputPlace) {
