@@ -35,42 +35,43 @@ public class StartButtonAfter extends AbstractInfosystemEventHandler<UsageReason
 	private List<Ersatzteile> selectSpareParts(DbContext ctx, UsageReasonSparePart head) {
 		List<Ersatzteile> selectedSpareParts = executeSelectSparePartsByHeadFields(ctx, head);
 		return selectSparePartsByTableFields(selectedSpareParts, head);
-//		return selectLastSparePartRows(selectedSpareParts);
 	}
 	
 	private List<Ersatzteile> selectSparePartsByTableFields(List<Ersatzteile> selectedSpareParts, UsageReasonSparePart head) {
-		return null;
+		ArrayList<Ersatzteile> selectedSparePartsByTableFields = new ArrayList<Ersatzteile>();
+		for (Ersatzteile sparePart : selectedSpareParts) {
+			if(wasEverUsed(sparePart)) {
+				Ersatzteile.Row row = sparePart.table().getRow(sparePart.getRowCount());
+				if(isSelectedByInfosystem(row, head)){
+					selectedSparePartsByTableFields.add(sparePart);
+				}
+			}else {
+				selectedSparePartsByTableFields.add(sparePart);
+			}
+		}
+		
+		return selectedSparePartsByTableFields;
+	}
+
+	private boolean isSelectedByInfosystem(Ersatzteile.Row row, UsageReasonSparePart head) {
+		return (head.getYspartusagereason().equals(UserEnumUsageReason.Empty) || row.getYspartusagereason().equals(head.getYspartusagereason())) 
+				& (head.getYspartdatefrom() == null || (row.getYspartusagedate().toDate().getTime() >= head.getYspartdatefrom().toDate().getTime()))
+				& (head.getYspartdateto() == null || (row.getYspartusagedate().toDate().getTime() <= head.getYspartdateto().toDate().getTime()));
 	}
 
 	private List<Ersatzteile> executeSelectSparePartsByHeadFields(DbContext ctx, UsageReasonSparePart head) {
 		SelectionBuilder<Ersatzteile> sparePartSelectionBuilder = SelectionBuilder.create(Ersatzteile.class);
 		sparePartSelectionBuilder.add(Conditions.eq(Ersatzteile.META.id, head.getYspartsparepart()));
 		sparePartSelectionBuilder.add(Conditions.eq(Ersatzteile.META.yspartpart, head.getYspartproduct()));
-//		sparePartSelectionBuilder.add(Conditions.eq(Ersatzteile.Row.META.yspartusagereason, head.getYspartusagereason()));
-//		sparePartSelectionBuilder.add(Conditions.between(Ersatzteile.Row.META.yspartusagedate, head.getYspartdatefrom(), head.getYspartdateto()));
 		return ctx.createQuery(sparePartSelectionBuilder.build()).execute();
-	}
-
-	private List<Ersatzteile.Row> selectLastSparePartRows(List<Ersatzteile.Row> selectedSparePartRows) {
-		ArrayList<Ersatzteile.Row> selectedLastSparePartRows = new ArrayList<Ersatzteile.Row>();
-		for (Ersatzteile.Row sparePartRow : selectedSparePartRows) {
-			if(isLastRowInSparePartTable(sparePartRow)) {
-				selectedLastSparePartRows.add(sparePartRow);
-			}
-		}
-		return selectedLastSparePartRows;
-	}
-
-	private boolean isLastRowInSparePartTable(Ersatzteile.Row sparePartRow) {
-		return sparePartRow.getRowNo() == sparePartRow.header().getRowCount();
 	}
 
 	private void appendRow(Table table, de.abas.erp.db.schema.custom.ersatzteileapp.Ersatzteile sparePart) {
 		Row newRow = table.appendRow();
+		newRow.setYsparttsparepart(sparePart);
+		newRow.setYsparttnamespart(sparePart);
 		newRow.setYsparttproduct(sparePart.getYspartpart());
 		newRow.setYsparttnewdateuse(new AbasDate());
-//		newRow.setYsparttdatelastuse(getDateFrom(sparePart));
-//		newRow.setYsparttreasonlastu(getReasonFrom(sparePart));
 		if(wasEverUsed(sparePart)){
 			de.abas.erp.db.schema.custom.ersatzteileapp.Ersatzteile.Row lastSparePartRow = selectLastRowFrom(sparePart.table());
 			newRow.setYsparttdatelastuse(getDateFrom(lastSparePartRow));
