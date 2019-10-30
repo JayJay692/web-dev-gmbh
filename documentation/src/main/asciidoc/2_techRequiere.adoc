@@ -1,0 +1,11 @@
+== Technische Voraussetzungen
+
+Für die erfolgreiche Installation der App sollte abas-ERP mindestens in der Version 2017r2 vorhanden sein.
+
+Für eine korrekte Lizenzierung muss Cloud-Connect auf dem Server installiert werden.
+
+.Für die korrekte Funktionsweise der App wird außerdem folgendes benötigt:
+* Eine stabile Internetverbindung
+* Auf dem entsprechenden Mandanten einen JFOP-Server, der aktiv und richtig konfiguriert ist (In der Regel der Default-JFOP-Server)
+* Auf dem Server muss smtp eingerichtet sein (zum Senden von Mails)
+* Unter dem Verzeichnis /usr/local/bin/ muss das Programm "sendEmail" installiert sein

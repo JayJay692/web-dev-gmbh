@@ -1,0 +1,5 @@
+== Allgemeines
+
+Mithilfe der AEB-App können innerhalb von abas-ERP Sanktionslistenprüfungen für Kunden, Lieferanten etc. durchgeführt werden.
+Das heißt, Namen oder Adressen werden mit Inhalten einer Datenbank abgeglichen und im Trefferfalle entsprechend markiert bzw. für Vorgänge gesperrt.
+Dies geschieht automatisch schon beim Anlegen/Ändern dieser Stammdaten und während laufender Einkaufs-/Verkaufsvorgänge.
