@@ -1,0 +1,30 @@
+== Funktionsumfang
+
+.Beim Speichern/Ändern folgender Stammdaten findet eine Sanktionslistenprüfung statt:
+* Kunde
+* Kundenkontakt
+* Lieferant
+* Lieferantenkontakt
+* Interessent
+* Interessentenkontakt
+
+IMPORTANT: Grundlage für die Überprüfung ist dabei jeweils das Feld "Name" (Datenbankvariable "ans").
+Im Trefferfalle hat der Benutzer die Möglichkeit den Datensatz dennoch zu speichern.
+
+image::musterLief.PNG[]
+
+
+.Beim Speichern/Ändern folgender Bewegungsdaten findet eine Sanktionslistenprüfung statt:
+* Einkaufsvorgänge ab Anfrage/Rahmenauftrag
+* Verkaufsvorgänge ab Angebot/Rahmenauftrag
+
+Auf die Vorgangsmaske wird ein neues Feld "Durch Sanktionslistenprüfung gesperrt" aufgenommen.
+Dieses und das Feld "Vorgang gesperrt" (Datenbankvariable "vsperre") wird gesetzt, wenn die Überprüfung des dort eingetragenen Kunden/Lieferanten einen Treffer wirft.
+Der Datensatz wird dennoch gespeichert.
+Sind diese beiden Felder gesetzt, kann der Vorgang weder gedruckt noch weitergeführt werden, beispielsweise von Lieferschein nach Rechnung.
+Das Feld "Durch Sanktionslistenprüfung gesperrt" kann manuell wieder deaktiviert werden, womit der Vorgang zumindest wieder gedruckt werden kann.
+
+image::felderVk.PNG[]
+
+
+TIP: Im Trefferfalle wird außerdem eine Email an die im Konfigurationsdatensatz hinterlegte Mailadresse verschickt. Scheitert der Mailversand wird eine entsprechende Meldung angezeigt.
