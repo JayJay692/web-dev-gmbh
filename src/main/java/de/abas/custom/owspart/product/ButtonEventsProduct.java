@@ -30,7 +30,7 @@ public class ButtonEventsProduct {
 	}	
 	
 	private void openSparePartInEditMode(String sparePartId) {
-			if (!new SystemInformation().getEdpMode()) {
+			if (!new SystemInformation().isEdpMode()) {
 				FOe.command(" -parallel \"" + sparePartId + "<(Edit)>\"");			
 			}
 	}

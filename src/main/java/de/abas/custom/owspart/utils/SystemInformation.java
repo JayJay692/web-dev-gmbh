@@ -4,18 +4,22 @@ import de.abas.erp.common.type.AbasDate;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.schema.company.CompanyData;
 import de.abas.erp.db.schema.warehouse.WarehouseGroup;
+import de.abas.jfop.base.buffer.Buffer;
 import de.abas.jfop.base.buffer.BufferFactory;
 import de.abas.jfop.base.buffer.GlobalTextBuffer;
 import de.abas.erp.api.util.UniqueObjectFactory;
 
 public class SystemInformation {
 	
-	GlobalTextBuffer globalTextBuffer = getGlobalTextBuffer();
+	private GlobalTextBuffer globalTextBuffer;
+
+	public SystemInformation(){
+		globalTextBuffer = BufferFactory.newInstance(true).getGlobalTextBuffer();
+	}
 	
-	public WarehouseGroup getIntlGroup(DbContext ctx) {
-		CompanyData companyData = getCompanyData(ctx);
-		WarehouseGroup intWarehGrp = companyData.getIntWarehGrp();
-		return intWarehGrp;
+	public WarehouseGroup getIntlGroup(DbContext databaseContext) {
+		CompanyData companyData = new UniqueObjectFactory(databaseContext).getCompanyData();
+		return companyData.getIntWarehGrp();
 	}
 	
 	public String getOperatorCode() {
@@ -30,7 +34,7 @@ public class SystemInformation {
 		return globalTextBuffer.getStringValue("currUserPwd");
 	}
 
-	public boolean getEdpMode() {
+	public boolean isEdpMode() {
 		return globalTextBuffer.getBooleanValue("runByEDP");
 	}
 
@@ -51,7 +55,7 @@ public class SystemInformation {
 	}
 	
 	public int getAbasVersionYear() {
-		String year =  getAbasVersion().substring(13, 17);
+		String year = getAbasVersion().substring(13, 17);
 		return Integer.parseInt(year);
 	}
 	
@@ -63,13 +67,4 @@ public class SystemInformation {
 		return globalTextBuffer.getStringValue("oneTimePwd");
 	}
 	
-	public GlobalTextBuffer getGlobalTextBuffer(){
-		BufferFactory bufferFactory = BufferFactory.newInstance(true);
-		return bufferFactory.getGlobalTextBuffer();		
-	}
-	
-	private CompanyData getCompanyData (DbContext ctx){
-		UniqueObjectFactory factory = new  UniqueObjectFactory(ctx);
-		return factory.getCompanyData();
-	}
 }

@@ -17,30 +17,29 @@ public class AbasFilesFactoryTODO {
 		try {
 			String currentContent = readCurrentContentFrom(file, encoding);
 			String newContent = currentContent.replaceAll(oldValue, newValue);
-			
+
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), encoding));
 			writer.write(newContent);
 			writer.close();
-			
+
 		} catch (FileNotFoundException e) {
-			throw new RuntimeException("Could not find file " + file.getAbsolutePath());
+			throw new RuntimeException("Could not find file " + file.getAbsolutePath(), e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 
 	private String readCurrentContentFrom(File file, String encoding)
-			throws UnsupportedEncodingException, FileNotFoundException, IOException {
-		String currentContent = "";
+			throws IOException {
+		StringBuilder currentContent = new StringBuilder();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), encoding));
 		
-		String line = reader.readLine();
-		while (line != null) {
-			currentContent = currentContent + line + System.lineSeparator();
-			line = reader.readLine();
+		String line;
+		while ((line = reader.readLine()) != null) {
+			currentContent.append(line).append(System.lineSeparator());
 		}
 		
 		reader.close();
-		return currentContent;
+		return currentContent.toString();
 	}	
 }
