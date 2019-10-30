@@ -21,7 +21,7 @@ import de.abas.erp.db.selection.SelectionBuilder;
 public class CodeTemplates {
 
 	private static final int EXIT_ERROR_CODE = 1;
-	SystemInformation systemInformation = new SystemInformation();
+	private SystemInformation systemInformation = new SystemInformation();
 
 	public static void abortEditors(EditorObject editor) {
 		if (editor != null && editor.active()) {
@@ -29,14 +29,14 @@ public class CodeTemplates {
 		}
 	}
 
-	public void displayNewTextBox(String boxMessage, DbContext ctx) {
-		if (!systemInformation.getEdpMode()) {
-			new TextBox(ctx, "Hinweis", boxMessage).show();
+	public void displayNewTextBox(String boxMessage, DbContext databaseContext) {
+		if (!systemInformation.isEdpMode()) {
+			new TextBox(databaseContext, "Hinweis", boxMessage).show();
 		}
 	}
 
 	public void actionIsProhibitedInGui() throws EventException {
-		if (!systemInformation.getEdpMode()) {
+		if (!systemInformation.isEdpMode()) {
 			throw createEventException("nicht erlaubt");
 		}
 	}
