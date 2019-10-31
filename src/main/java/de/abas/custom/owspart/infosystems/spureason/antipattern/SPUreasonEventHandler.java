@@ -3,6 +3,8 @@ package de.abas.custom.owspart.infosystems.spureason.antipattern;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.abas.custom.owspart.utils.SystemInformation;
+import de.abas.erp.api.gui.TextBox;
 import de.abas.erp.axi.event.EventException;
 import de.abas.erp.axi.screen.ScreenControl;
 import de.abas.erp.axi2.EventHandlerRunner;
@@ -19,9 +21,12 @@ import de.abas.erp.axi2.type.FieldEventType;
 import de.abas.erp.axi2.type.ScreenEventType;
 import de.abas.erp.common.type.AbasDate;
 import de.abas.erp.db.DbContext;
+import de.abas.erp.db.EditorAction;
+import de.abas.erp.db.exception.CommandException;
 import de.abas.erp.db.infosystem.custom.owspart.UsageReasonSparePart;
 import de.abas.erp.db.infosystem.custom.owspart.UsageReasonSparePart.Table;
 import de.abas.erp.db.schema.custom.ersatzteileapp.Ersatzteile;
+import de.abas.erp.db.schema.custom.ersatzteileapp.ErsatzteileEditor;
 import de.abas.erp.db.schema.custom.ersatzteileapp.Ersatzteile.Row;
 import de.abas.erp.db.schema.userenums.UserEnumUsageReason;
 import de.abas.erp.db.selection.Conditions;
@@ -108,7 +113,31 @@ public class SPUreasonEventHandler {
 	@ButtonEventHandler(field = "ysparttsetusage", type = ButtonEventType.AFTER, table = true)
 	public void ysparttsetusageAfter(ButtonEvent event, ScreenControl screenControl, DbContext ctx,
 			UsageReasonSparePart head, UsageReasonSparePart.Row currentRow) throws EventException {
-	
+		SystemInformation systemInformation = new SystemInformation();
+		UsageReasonSparePart.Row row = (UsageReasonSparePart.Row) currentRow;
+		if(row.getYsparttnewreasonus() == UserEnumUsageReason.Empty){
+			if (!systemInformation.isEdpMode()) {
+				new TextBox(ctx, "Hinweis", "Achtung! Bitte Verwendungsgrund angeben!").show();
+			}
+			return;
+		}
+		try {
+			ErsatzteileEditor editor = row.getYsparttsparepart().createEditor();
+	        editor.open(EditorAction.UPDATE);
+	        ErsatzteileEditor.Row newRow = editor.table().appendRow();
+	        newRow.setYspartusagedate(row.getYsparttnewdateuse());
+	        newRow.setYspartusagereason(row.getYsparttnewreasonus());
+	        editor.commit();
+	        if(editor.active()){
+	            editor.abort();
+	        }
+		} catch (CommandException e) {
+			throw new EventException("Ersatzteil konnte nicht angelegt werden", 1);
+		}
+		if (!systemInformation.isEdpMode()) {
+			new TextBox(ctx, "Hinweis", "Verwendung erfolgreich angelegt.").show();
+		}
+		
 	}
 
 	@ScreenEventHandler(type = ScreenEventType.ENTER)
