@@ -1,0 +1,10 @@
+== Allgemeine Voraussetzungen
+
+Um die App benutzen zu können, muss diese über den Marketplace gekauft und lizenziert werden.
+
+IMPORTANT: Mit Installation der App, wird auf dem entsprechenden Mandanten eine Zusatztabelle eingerichtet, in der ein einzelner Datensatz vorerstellt wird.
+In diesem müssen zunächst verschiedene Angaben gemacht werden, u. a. die AEB-Zugangsdaten.
+Erst dann können Sanktionsprüfungen durchgeführt werden.
+Weiterhin müssen dort auch Parameter für das Email-Programm (siehe techn. Voraussetzungen)  eingestellt werden, damit im Trefferfalle eine Email an den jeweiligen Compliance-Beauftragten verschickt werden kann.
+
+image::konfigdatensatz.PNG[]
