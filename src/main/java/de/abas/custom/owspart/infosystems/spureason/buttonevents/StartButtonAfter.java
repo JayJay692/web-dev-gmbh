@@ -31,40 +31,6 @@ public class StartButtonAfter extends AbstractInfosystemEventHandler<UsageReason
 		}
 	}
 
-//	private List<Ersatzteile> selectSpareParts(DbContext ctx, UsageReasonSparePart head) {
-//		List<Ersatzteile> selectedSpareParts = executeSelectSparePartsByHeadFields(ctx, head);
-//		return selectSparePartsByTableFields(selectedSpareParts, head);
-//	}
-	
-//	private List<Ersatzteile> selectSparePartsByTableFields(List<Ersatzteile> selectedSpareParts, UsageReasonSparePart head) {
-//		ArrayList<Ersatzteile> selectedSparePartsByTableFields = new ArrayList<Ersatzteile>();
-//		for (Ersatzteile sparePart : selectedSpareParts) {
-//			if(wasEverUsed(sparePart)) {
-//				Ersatzteile.Row row = sparePart.table().getRow(sparePart.getRowCount());
-//				if(isSelectedByInfosystem(row, head)){
-//					selectedSparePartsByTableFields.add(sparePart);
-//				}
-//			}else {
-//				selectedSparePartsByTableFields.add(sparePart);
-//			}
-//		}
-//		
-//		return selectedSparePartsByTableFields;
-//	}
-
-//	private boolean isSelectedByInfosystem(Ersatzteile.Row row, UsageReasonSparePart head) {
-//		return (head.getYspartusagereason().equals(UserEnumUsageReason.Empty) || row.getYspartusagereason().equals(head.getYspartusagereason())) 
-//				& (head.getYspartdatefrom() == null || (row.getYspartusagedate().toDate().getTime() >= head.getYspartdatefrom().toDate().getTime()))
-//				& (head.getYspartdateto() == null || (row.getYspartusagedate().toDate().getTime() <= head.getYspartdateto().toDate().getTime()));
-//	}
-
-//	private List<Ersatzteile> executeSelectSparePartsByHeadFields(DbContext ctx, UsageReasonSparePart head) {
-//		SelectionBuilder<Ersatzteile> sparePartSelectionBuilder = SelectionBuilder.create(Ersatzteile.class);
-//		sparePartSelectionBuilder.add(Conditions.eq(Ersatzteile.META.id, head.getYspartsparepart()));
-//		sparePartSelectionBuilder.add(Conditions.eq(Ersatzteile.META.yspartpart, head.getYspartproduct()));
-//		return ctx.createQuery(sparePartSelectionBuilder.build()).execute();
-//	}
-
 	private void appendRow(Table table, de.abas.erp.db.schema.custom.ersatzteileapp.Ersatzteile sparePart) {
 		Row newRow = table.appendRow();
 		newRow.setYsparttsparepart(sparePart);
