@@ -17,7 +17,7 @@ public class DatabaseMetaData {
 	private Vartab getVartab(DbContext ctx, String vartabSearchWord) {
 		// TODO: abfangen wenn null
 		List<Vartab> selectVartab = new CodeTemplates().getSelectList(Vartab.class, "swd", vartabSearchWord, ctx);
-		return selectVartab.iterator().next();
+        return selectVartab.get(0);
 	}
 
 	public String getDatabaseNumberAsString(EnumDatabase dbNoDb) {
