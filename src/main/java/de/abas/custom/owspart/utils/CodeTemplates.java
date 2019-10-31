@@ -41,7 +41,7 @@ public class CodeTemplates {
 		}
 	}
 
-	public EventException createEventException(String errorText) throws EventException {
+    public EventException createEventException(String errorText) {
 		return new EventException(errorText, EXIT_ERROR_CODE);
 	}
 

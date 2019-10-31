@@ -1,9 +1,8 @@
 package de.abas.custom.owspart.configuration;
 
 import de.abas.custom.owspart.utils.CodeTemplates;
-import de.abas.custom.owspart.utils.esdk.AbasFilesFactoryTODO;
 import de.abas.custom.owspart.utils.esdk.DatabaseMetaData;
-import de.abas.custom.owspart.utils.esdk.EsdkProperties;
+import de.abas.custom.owspart.utils.esdk.UCMFileProcessor;
 import de.abas.erp.axi.event.EventException;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.schema.custom.ersatzteileapp.KonfigurationEditor;
@@ -15,19 +14,31 @@ public class ButtonEventsConfiguration {
 		this.configurationEditor = configurationEditor;
 	}
 
-	DbContext ctx;
-	KonfigurationEditor configurationEditor;
-	AbasFilesFactoryTODO ucmFileFactory = new AbasFilesFactoryTODO();
-	CodeTemplates codeTemplates = new CodeTemplates();
+	private DbContext ctx;
+	private KonfigurationEditor configurationEditor;
+	private UCMFileProcessor ucmFileProcessor = new UCMFileProcessor();
+	private CodeTemplates codeTemplates = new CodeTemplates();
+	private DatabaseMetaData databaseMetaData = new DatabaseMetaData();
 
 	void finishConfigButtonAfter() throws EventException {
 		try {
-			String databaseCommand = new DatabaseMetaData().getDatabaseCommand(ctx, configurationEditor.getDBNo());
-			ucmFileFactory.replaceContentInFile(EsdkProperties.getUcmFile(), EsdkProperties.getUcmPlaceHolder(),
-					databaseCommand, "UTF16");
+			String databaseCommand = databaseMetaData.getDatabaseCommand(ctx, configurationEditor.getDBNo());
+			ucmFileProcessor.replaceCommandInUCMFile(databaseCommand);
 			codeTemplates.displayNewTextBox("Konfiguration abgeschlossen", ctx);
 		} catch (RuntimeException e) {
-			codeTemplates.createEventException(e.getMessage());
+			throw codeTemplates.createEventException(e.getMessage());
 		}
+	}
+
+	void setCodeTemplates(CodeTemplates codeTemplates) {
+		this.codeTemplates = codeTemplates;
+	}
+
+	void setDatabaseMetaData(DatabaseMetaData databaseMetaData) {
+		this.databaseMetaData = databaseMetaData;
+	}
+
+	void setUcmFileProcessor(UCMFileProcessor ucmFileProcessor) {
+		this.ucmFileProcessor = ucmFileProcessor;
 	}
 }

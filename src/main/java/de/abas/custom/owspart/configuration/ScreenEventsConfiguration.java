@@ -7,9 +7,9 @@ import de.abas.erp.db.DbContext;
 
 public class ScreenEventsConfiguration {
 
-	DbContext ctx;
-	ScreenEvent event;
-	CodeTemplates codeTemplate = new CodeTemplates();
+	private DbContext ctx;
+	private ScreenEvent event;
+	private CodeTemplates codeTemplates = new CodeTemplates();
 
 	public ScreenEventsConfiguration(DbContext ctx, ScreenEvent event) {
 		this.ctx = ctx;
@@ -17,9 +17,12 @@ public class ScreenEventsConfiguration {
 	}
 
 	public void screenEnter() throws EventException {
-		if (codeTemplate.isEventNewOrCopy(event)) {
-			codeTemplate.actionIsProhibitedInGui();
+		if (codeTemplates.isEventNewOrCopy(event)) {
+			codeTemplates.actionIsProhibitedInGui();
 		}
 	}
 
+	void setCodeTemplates(CodeTemplates codeTemplates) {
+		this.codeTemplates = codeTemplates;
+	}
 }
