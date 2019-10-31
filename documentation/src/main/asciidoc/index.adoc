@@ -1,17 +1,12 @@
 :docinfo:
-= sparePartApp
-Documentation
-:nofooter:
+include::headline.adoc[]
 
-This document describes the sparePartApp app.
+include::1_general.adoc[]
 
-include::subpage.adoc[]
+include::2_techRequiere.adoc[]
 
-include::additionalpage.adoc[]
+include::3_generalRequire.adoc[]
 
-== About
+include::4_functions.adoc[]
 
-sparePartApp +
-(C) Your Company
-
-https://your-website.com/
+include::5_about.adoc[]
