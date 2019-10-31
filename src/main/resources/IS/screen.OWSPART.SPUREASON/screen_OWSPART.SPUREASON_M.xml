@@ -84,7 +84,7 @@
       <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttdatelastuse" s3Name="1:ysparttdatelastuse" />
       <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttreasonlastu" s3Name="1:ysparttreasonlastu" />
       <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttnewdateuse" s3Name="1:ysparttnewdateuse" />
-      <erpfield access="readOnly" msgId="spureason_owspart_ftable_ysparttnewreasonus" s3Name="1:ysparttnewreasonus" />
+      <erpfield msgId="spureason_owspart_ftable_ysparttnewreasonus" s3Name="1:ysparttnewreasonus" />
       <erpfield dimX="0" msgId="spureason_owspart_ftable_ysparttsetusage" s3Name="1:ysparttsetusage" />
      </table>
     </pane.split>
