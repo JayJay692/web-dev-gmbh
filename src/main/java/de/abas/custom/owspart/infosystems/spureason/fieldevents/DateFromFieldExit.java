@@ -11,10 +11,15 @@ import de.abas.erp.db.infosystem.custom.owspart.UsageReasonSparePart;
 import de.abas.erp.db.infosystem.standard.BaseInfosystem.Row;
 
 public class DateFromFieldExit extends AbstractInfosystemEventHandler<UsageReasonSparePart> {
-
+	private CodeTemplates codeTemplates = new CodeTemplates();
+	
 	@Override
 	protected void handleEventImpl(Event<? extends EventType> event, ScreenControl screenControl, DbContext ctx,
 			UsageReasonSparePart head, Row<? extends UsageReasonSparePart> currentRow) throws EventException {
-		new CodeTemplates().validateDateRangeForInfosytem(head.getYspartdateto(), head.getYspartdatefrom());
+		codeTemplates.validateDateRangeForInfosytem(head.getYspartdateto(), head.getYspartdatefrom());
+	}
+	
+	public void setCodeTemplates(CodeTemplates codeTemplates) {
+		this.codeTemplates = codeTemplates;
 	}
 }

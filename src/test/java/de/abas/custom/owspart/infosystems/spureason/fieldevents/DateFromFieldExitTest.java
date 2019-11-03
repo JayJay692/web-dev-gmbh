@@ -16,7 +16,7 @@ import de.abas.erp.db.DbContext;
 import de.abas.erp.db.infosystem.custom.owspart.UsageReasonSparePart;
 
 @RunWith(MockitoJUnitRunner.class)
-public class DateToFieldExitTest {
+public class DateFromFieldExitTest {
 	@Mock
     private UsageReasonSparePart sparepartUsage;
 	
@@ -29,12 +29,12 @@ public class DateToFieldExitTest {
 	@Mock
     private CodeTemplates codeTemplates;
 	
-	private DateToFieldExit dateToFieldExit;
+	private DateFromFieldExit dateFromFieldExit;
 	
 	@Before
     public void prepare(){
-        dateToFieldExit = new DateToFieldExit();
-        dateToFieldExit.setCodeTemplates(codeTemplates);
+		dateFromFieldExit = new DateFromFieldExit();
+		dateFromFieldExit.setCodeTemplates(codeTemplates);
     }
 	
 	@Test
@@ -50,7 +50,7 @@ public class DateToFieldExitTest {
 		Mockito.when(sparepartUsage.getYspartdatefrom()).thenReturn(mockAbasDateFrom);
 		Mockito.when(sparepartUsage.getYspartdateto()).thenReturn(mockAbasDateTo);
 		
-		dateToFieldExit.handleEventImpl(Mockito.mock(FieldEvent.class), Mockito.mock(ScreenControl.class), dbContext, sparepartUsage, sparepartUsageRow);
+		dateFromFieldExit.handleEventImpl(Mockito.mock(FieldEvent.class), Mockito.mock(ScreenControl.class), dbContext, sparepartUsage, sparepartUsageRow);
 		
 		Mockito.verify(codeTemplates).validateDateRangeForInfosytem(mockAbasDateTo, mockAbasDateFrom);
 		Mockito.verify(codeTemplates).createEventException(Mockito.anyString());
