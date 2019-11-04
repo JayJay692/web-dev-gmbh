@@ -4,6 +4,7 @@ import de.abas.custom.owspart.utils.CodeTemplates;
 import de.abas.custom.owspart.utils.esdk.DatabaseMetaData;
 import de.abas.custom.owspart.utils.esdk.UCMFileProcessor;
 import de.abas.erp.axi.event.EventException;
+import de.abas.erp.axi2.event.ButtonEvent;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.schema.custom.ersatzteileapp.KonfigurationEditor;
 import org.junit.Before;

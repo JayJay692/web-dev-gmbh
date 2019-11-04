@@ -11,7 +11,7 @@ database master ErsatzteileApp {
 				showPriority A
 				changePriority A
 			}
-			field GL3 dbno {
+			field GL3 skip dbno {
 				label ""
 				heading ""
 				description Datenbanknummer
@@ -19,7 +19,7 @@ database master ErsatzteileApp {
 				showPriority A
 				changePriority A
 			}
-			field A177 dbname {
+			field A177 skip dbname {
 				label ""
 				heading ""
 				description Datenbankname
