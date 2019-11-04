@@ -8,12 +8,11 @@ import de.abas.erp.db.DbContext;
 import de.abas.erp.db.infosystem.custom.owspart.UsageReasonSparePart;
 import de.abas.erp.db.infosystem.standard.BaseInfosystem.Row;
 
-public class ScreenEnter extends AbstractInfosystemEventHandler<UsageReasonSparePart>{
+public class ScreenEnter extends AbstractInfosystemEventHandler<UsageReasonSparePart, UsageReasonSparePart.Row> {
 
 	@Override
 	protected void handleEventImpl(Event<? extends EventType> event, ScreenControl screenControl, DbContext ctx,
-			UsageReasonSparePart head, Row<? extends UsageReasonSparePart> currentRow) {
-		
+								   UsageReasonSparePart head, UsageReasonSparePart.Row currentRow) {
 	}
 
 }

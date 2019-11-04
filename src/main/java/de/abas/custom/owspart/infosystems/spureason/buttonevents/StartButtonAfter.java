@@ -14,12 +14,12 @@ import de.abas.erp.db.infosystem.custom.owspart.UsageReasonSparePart.Table;
 import de.abas.erp.db.schema.custom.ersatzteileapp.Ersatzteile;
 import de.abas.erp.db.schema.userenums.UserEnumUsageReason;
 
-public class StartButtonAfter extends AbstractInfosystemEventHandler<UsageReasonSparePart> {
+public class StartButtonAfter extends AbstractInfosystemEventHandler<UsageReasonSparePart, UsageReasonSparePart.Row> {
 	private SparePartsSelector sparePartsSelector = new SparePartsSelector();
 	
 	@Override
 	protected void handleEventImpl(Event<? extends EventType> event, ScreenControl screenControl, DbContext ctx, UsageReasonSparePart head,
-											de.abas.erp.db.infosystem.standard.BaseInfosystem.Row<? extends UsageReasonSparePart> currentRow) {
+								   UsageReasonSparePart.Row currentRow) {
 		Table table = head.table();
 		table.clear();
 		fill(table, sparePartsSelector.selectBy(head, ctx));

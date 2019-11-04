@@ -13,22 +13,20 @@ import de.abas.erp.db.infosystem.custom.owspart.UsageReasonSparePart;
 import de.abas.erp.db.infosystem.standard.BaseInfosystem.Row;
 import de.abas.erp.db.schema.userenums.UserEnumUsageReason;
 
-public class SetUsageButtonAfter extends AbstractInfosystemEventHandler<UsageReasonSparePart>{
+public class SetUsageButtonAfter extends AbstractInfosystemEventHandler<UsageReasonSparePart, UsageReasonSparePart.Row> {
 
 	private SparePartUsageAppender sparePartUsageAppender = new SparePartUsageAppender();
 	private CodeTemplates codeTemplates = new CodeTemplates();
 
 	@Override
 	protected void handleEventImpl(Event<? extends EventType> event, ScreenControl screenControl, DbContext ctx,
-			UsageReasonSparePart head, Row<? extends UsageReasonSparePart> currentRow) throws EventException {
+								   UsageReasonSparePart head, UsageReasonSparePart.Row currentRow) throws EventException {
 
-		UsageReasonSparePart.Row row = (UsageReasonSparePart.Row) currentRow;
-
-		if(isSparepartUsageEmptyIn(row)){
+		if (isSparepartUsageEmptyIn(currentRow)) {
 			showNoUsageReasonHint(ctx);
 			return;
 		}
-		addSparepartUsageFor(row);
+		addSparepartUsageFor(currentRow);
 		showSuccessHint(ctx);
 	}
 

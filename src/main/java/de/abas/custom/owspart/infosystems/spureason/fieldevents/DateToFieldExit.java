@@ -9,12 +9,12 @@ import de.abas.erp.db.DbContext;
 import de.abas.erp.db.infosystem.custom.owspart.UsageReasonSparePart;
 import de.abas.erp.db.infosystem.standard.BaseInfosystem.Row;
 
-public class DateToFieldExit extends AbstractInfosystemEventHandler<UsageReasonSparePart> {
+public class DateToFieldExit extends AbstractInfosystemEventHandler<UsageReasonSparePart, UsageReasonSparePart.Row> {
 	private CodeTemplates codeTemplates = new CodeTemplates();
 	
 	@Override
 	protected void handleEventImpl(Event<? extends EventType> event, ScreenControl screenControl, DbContext ctx,
-			UsageReasonSparePart head, Row<? extends UsageReasonSparePart> currentRow) throws Exception {
+								   UsageReasonSparePart head, UsageReasonSparePart.Row currentRow) throws Exception {
 		codeTemplates.validateDateRangeForInfosytem(head.getYspartdateto(), head.getYspartdatefrom());
 	}
 
