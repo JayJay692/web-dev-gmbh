@@ -19,7 +19,7 @@ public class ProductEventHandler {
 
 	@ButtonEventHandler(field="yspartcreatespart", type = ButtonEventType.AFTER)
 	public void yspartcreatespartAfter(ButtonEvent event, ScreenControl screenControl, DbContext ctx, ProductEditor head) throws EventException {
-		new ButtonEventsProduct(ctx, event).createSpartButtonAfter(head);
+		new CreateNewSparePartButtonEvent(ctx, event).createSpartButtonAfter(head);
 	}
 
 }

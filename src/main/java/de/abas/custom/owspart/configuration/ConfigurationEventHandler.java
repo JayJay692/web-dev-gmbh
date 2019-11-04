@@ -23,13 +23,13 @@ public class ConfigurationEventHandler {
 	@ButtonEventHandler(field = "yspartfinishconfig", type = ButtonEventType.AFTER)
 	public void yspartfinishconfigAfter(ButtonEvent event, ScreenControl screenControl, DbContext ctx,
 			KonfigurationEditor head) throws EventException {
-		new ButtonEventsConfiguration(ctx, head).finishConfigButtonAfter();
+		new ButtonEventsConfiguration(ctx, event, head).finishConfigButtonAfter();
 	}
 
 	@ScreenEventHandler(type = ScreenEventType.ENTER)
 	public void screenEnter(ScreenEvent event, ScreenControl screenControl, DbContext ctx, KonfigurationEditor head)
 			throws EventException {
-		new ScreenEventsConfiguration(ctx, event).screenEnter();
+		new ScreenEventsConfiguration(ctx, event, head).screenEnter();
 	}
 
 }
