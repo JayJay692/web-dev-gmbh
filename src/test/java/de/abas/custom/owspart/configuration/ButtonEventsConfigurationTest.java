@@ -4,6 +4,7 @@ import de.abas.custom.owspart.utils.CodeTemplates;
 import de.abas.custom.owspart.utils.esdk.DatabaseMetaData;
 import de.abas.custom.owspart.utils.esdk.UCMFileProcessor;
 import de.abas.erp.axi.event.EventException;
+import de.abas.erp.axi2.event.ButtonEvent;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.schema.custom.ersatzteileapp.KonfigurationEditor;
 import org.junit.Before;
@@ -38,7 +39,7 @@ public class ButtonEventsConfigurationTest {
     public void prepare() {
         when(codeTemplates.createEventException(any())).thenCallRealMethod();
         when(databaseMetaData.getDatabaseCommand(any(), any())).thenReturn(testDbCommand);
-        buttonEventsConfiguration = new ButtonEventsConfiguration(mock(DbContext.class), PowerMockito.mock(KonfigurationEditor.class));
+        buttonEventsConfiguration = new ButtonEventsConfiguration(mock(DbContext.class), mock(ButtonEvent.class), PowerMockito.mock(KonfigurationEditor.class));
         buttonEventsConfiguration.setUcmFileProcessor(ucmFileProcessor);
         buttonEventsConfiguration.setCodeTemplates(codeTemplates);
         buttonEventsConfiguration.setDatabaseMetaData(databaseMetaData);
