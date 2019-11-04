@@ -1,5 +1,6 @@
 package de.abas.custom.owspart.infosystems.spureason.fieldevents;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Before;
@@ -9,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 import de.abas.custom.owspart.utils.CodeTemplates;
+import de.abas.erp.axi.event.EventException;
 import de.abas.erp.axi.screen.ScreenControl;
 import de.abas.erp.axi2.event.FieldEvent;
 import de.abas.erp.common.type.AbasDate;
@@ -26,34 +28,33 @@ public class DateFromFieldExitTest {
 	@Mock
 	private DbContext dbContext;
 	
-	@Mock
-    private CodeTemplates codeTemplates;
-	
 	private DateFromFieldExit dateFromFieldExit;
 	
 	@Before
     public void prepare(){
 		dateFromFieldExit = new DateFromFieldExit();
-		dateFromFieldExit.setCodeTemplates(codeTemplates);
+		dateFromFieldExit.setCodeTemplates(new CodeTemplates());
     }
 	
-	@Test
+	@Test(expected = EventException.class)
 	public void testEventExceptionIsThrown() throws Exception {
 		AbasDate mockAbasDateFrom = Mockito.mock(AbasDate.class);
 		AbasDate mockAbasDateTo = Mockito.mock(AbasDate.class);
-		Date mockDateFrom = Mockito.mock(Date.class);
-		Date mockDateTo= Mockito.mock(Date.class);
-		Mockito.when(mockDateTo.before(mockDateFrom)).thenReturn(true);
-		Mockito.when(mockAbasDateFrom.toDate()).thenReturn(mockDateFrom);
-		Mockito.when(mockAbasDateTo.toDate()).thenReturn(mockDateTo);
-		Mockito.when(mockAbasDateTo.toDate().before(mockAbasDateFrom.toDate())).thenReturn(true);
+		Date dateFrom = oneDayAfter();
+		Date dateTo = new Date();
+		Mockito.when(mockAbasDateFrom.toDate()).thenReturn(dateFrom);
+		Mockito.when(mockAbasDateTo.toDate()).thenReturn(dateTo);
 		Mockito.when(sparepartUsage.getYspartdatefrom()).thenReturn(mockAbasDateFrom);
 		Mockito.when(sparepartUsage.getYspartdateto()).thenReturn(mockAbasDateTo);
 		
 		dateFromFieldExit.handleEventImpl(Mockito.mock(FieldEvent.class), Mockito.mock(ScreenControl.class), dbContext, sparepartUsage, sparepartUsageRow);
-		
-		Mockito.verify(codeTemplates).validateDateRangeForInfosytem(mockAbasDateTo, mockAbasDateFrom);
-		Mockito.verify(codeTemplates).createEventException(Mockito.anyString());
 	}
-
+	
+	private Date oneDayAfter() {
+		Date date = new Date();
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.add(Calendar.DATE, 1);
+		return calendar.getTime();
+	}
 }
