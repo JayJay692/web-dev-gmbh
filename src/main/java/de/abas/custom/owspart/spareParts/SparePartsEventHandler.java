@@ -1,5 +1,6 @@
 package de.abas.custom.owspart.spareParts;
 
+import de.abas.custom.owspart.events.ScreenEvents;
 import de.abas.erp.axi.event.EventException;
 import de.abas.erp.axi.screen.ScreenControl;
 import de.abas.erp.axi2.EventHandlerRunner;
@@ -19,7 +20,7 @@ public class SparePartsEventHandler {
 	
 	@ScreenEventHandler(type = ScreenEventType.ENTER)
 	public void screenEnter(ScreenEvent event, ScreenControl screenControl, DbContext ctx, ErsatzteileEditor head) throws EventException {
-		new ScreenEventsSpareParts(ctx, event).screenEnter();
+		new ScreenEvents(event).screenEnter();
 	}
 
 }

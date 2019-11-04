@@ -1,5 +1,6 @@
 package de.abas.custom.owspart.configuration;
 
+import de.abas.custom.owspart.events.ScreenEvents;
 import de.abas.erp.axi.event.EventException;
 import de.abas.erp.axi.screen.ScreenControl;
 import de.abas.erp.axi2.EventHandlerRunner;
@@ -7,7 +8,6 @@ import de.abas.erp.axi2.annotation.ButtonEventHandler;
 import de.abas.erp.axi2.annotation.EventHandler;
 import de.abas.erp.axi2.annotation.ScreenEventHandler;
 import de.abas.erp.axi2.event.ButtonEvent;
-import de.abas.erp.axi2.event.ScreenEvent;
 import de.abas.erp.axi2.type.ButtonEventType;
 import de.abas.erp.axi2.type.ScreenEventType;
 import de.abas.erp.db.DbContext;
@@ -27,9 +27,9 @@ public class ConfigurationEventHandler {
 	}
 
 	@ScreenEventHandler(type = ScreenEventType.ENTER)
-	public void screenEnter(ScreenEvent event, ScreenControl screenControl, DbContext ctx, KonfigurationEditor head)
+	public void screenEnter(de.abas.erp.axi2.event.ScreenEvent event, ScreenControl screenControl, DbContext ctx, KonfigurationEditor head)
 			throws EventException {
-		new ScreenEventsConfiguration(ctx, event).screenEnter();
+		new ScreenEvents(event).screenEnter();
 	}
 
 }
