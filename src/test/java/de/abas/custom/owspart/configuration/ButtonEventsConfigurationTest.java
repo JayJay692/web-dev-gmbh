@@ -39,7 +39,7 @@ public class ButtonEventsConfigurationTest {
     public void prepare() {
         when(codeTemplates.createEventException(any())).thenCallRealMethod();
         when(databaseMetaData.getDatabaseCommand(any(), any())).thenReturn(testDbCommand);
-        buttonEventsConfiguration = new ButtonEventsConfiguration(mock(DbContext.class), mock(ButtonEvent.class), PowerMockito.mock(KonfigurationEditor.class));
+        buttonEventsConfiguration = new ButtonEventsConfiguration(mock(DbContext.class), PowerMockito.mock(KonfigurationEditor.class));
         buttonEventsConfiguration.setUcmFileProcessor(ucmFileProcessor);
         buttonEventsConfiguration.setCodeTemplates(codeTemplates);
         buttonEventsConfiguration.setDatabaseMetaData(databaseMetaData);
